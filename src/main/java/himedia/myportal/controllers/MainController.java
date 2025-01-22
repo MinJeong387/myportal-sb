@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
 	@GetMapping({"/", "/main"})
 	public String main() {
-//		return "/WEB-INF/views/home.jsp";
 		return "home";
-	}
-	
+	}	
 }

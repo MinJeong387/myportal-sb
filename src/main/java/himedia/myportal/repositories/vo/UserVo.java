@@ -14,27 +14,21 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserVo {
 	private Integer no;
-
+	
 	@NotEmpty
-	@Length(min = 2, max = 8)
+	@Length(min=2, max=8)
 	private String name;
-
+	
 	@NotEmpty
 	@Email
 	private String email;
-
+	
 	@NotEmpty
-	@Length(min = 4, max = 20)
+	@Length(min=4, max=20)
 	private String password;
 	
 	@NotNull
 	private String gender;
-	
 	private Date joindate;
 
-	
 }
-
-
-
-// 생성자, 겟셋 등등을 손쉽게 만들어주는 라이브러리가 롬복
