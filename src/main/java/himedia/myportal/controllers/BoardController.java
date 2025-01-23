@@ -63,6 +63,7 @@ public class BoardController {
 		}
 		*/
 		
+		//	세션으로부터 사용자 PK 받아오는 부분 제거
 		//	TODO: 인증 로직 추가 필요
 		if (authUser != null) {
 			vo.setUserNo(authUser.getNo());
@@ -84,7 +85,7 @@ public class BoardController {
 	
 	@GetMapping("/{no}/modify")
 	public String modifyForm(
-		@PathVariable("no") Integer no,
+		@PathVariable Integer no,
 		Model model, 
 		HttpSession session) {
 		/*
