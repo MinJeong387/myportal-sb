@@ -17,25 +17,22 @@ import himedia.myportal.services.FileUploadService;
 @Controller
 @RequestMapping("/fileupload")
 public class FileUploadController {
-	private static final Logger logger = 
-			LoggerFactory.getLogger(FileUploadController.class);
+	private static final Logger logger = LoggerFactory.getLogger(FileUploadController.class);
 	@Autowired
 	private FileUploadService fileUploadService;
-	
-	@GetMapping({"", "/form"})
+
+	@GetMapping({ "", "/form" })
 	public String form() {
 		return "fileupload/form";
 	}
-	
+
 	@PostMapping("/upload")
-	public String upload(
-		@RequestParam("file1") MultipartFile file1,
-		Model model) {
+	public String upload(@RequestParam("file1") MultipartFile file1, Model model) {
 		if (file1 != null) {
 			String saveFilename = fileUploadService.store(file1);
 			model.addAttribute("imageFilename", saveFilename);
 		}
-		
+
 		return "fileupload/result";
 	}
 }
